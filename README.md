@@ -1,7 +1,7 @@
-# metashot/snp-phylo Nextflow
+# metashot/prok-snp
 
 ## Introduction
-metashot/snp-phylo is a workflow for the identification SNVs (of closely related
+metashot/prok-snp is a workflow for the identification SNVs (of closely related
 organisms) and phylogenetic tree inference from prokaryotic isolates.
 
 ## Main features
@@ -20,7 +20,7 @@ organisms) and phylogenetic tree inference from prokaryotic isolates.
 1. Start running the analysis:
 
   ```bash
-  nextflow run metashot/snp-phylo
+  nextflow run metashot/prok-snp
     --reads '*_R{1,2}.fastq.gz' \
     --ref reference.fa \
     --outdir results
