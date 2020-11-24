@@ -34,8 +34,8 @@ See the file [`nextflow.config`](nextflow.config) for the complete list of
 parameters.
 
 ## Output
-The files and directories listed below will be created in the `results` directory
-after the pipeline has finished.
+The files and directories listed below will be created in the `results`
+directory after the pipeline has finished.
 
 ### Main outputs
 - `core_aln.fa`: the core SNP alignment in FASTA format (`snippy-core` output);
@@ -43,7 +43,8 @@ after the pipeline has finished.
   output);
 - `core.vcf`: multi-sample VCF file with genotype GT tags for all discovered
   (`snippy-core` output); alleles(`snippy-core` output);
-- `tree.tree`: the best-scoring ML tree of a thorough ML analysis (`raxml` output);
+- `tree.tree`: the best-scoring ML tree of a thorough ML analysis (`raxml`
+  output);
 - `tree_support.tree`: the best-scoring ML tree with the BS support values (from
   0 to 100, RAxML output when `--raxml_mode rbs`).
 
@@ -59,22 +60,24 @@ after the pipeline has finished.
 
 ### RAxML
 Since the input alignments are from SNP data, the ascertainment bias correction
-is applied to the likelihood calculations<sup>[1](#footnote1)</sup> (RAxML option `-m ASC_GTRCAT`) and
-the rate heterogeneity among sites model is disabled (RAxML option `-­V`). Two
-modes are available:
+is applied to the likelihood calculations<sup>[1](#footnote1)</sup> (RAxML
+option `-m ASC_GTRCAT`) and the rate heterogeneity among sites model is disabled
+(RAxML option `-­V`). Two modes are available:
 
 - default mode: construct a maximum likelihood (ML) tree. This mode runs the
-  default RAxML tree search algorithm<sup>[2](#footnote2)</sup> and perform multiple searches for the
-  best tree (10 distinct randomized MP trees by default, see the parameter
-  `--raxml_nsearch`). The following RAxML parameters will be used:
+  default RAxML tree search algorithm<sup>[2](#footnote2)</sup> and perform
+  multiple searches for the best tree (10 distinct randomized MP trees by
+  default, see the parameter `--raxml_nsearch`). The following RAxML parameters
+  will be used:
 
   ```bash
   -f d -m ASC_GTRCAT -V --asc-corr=lewis -N [RAXML_NSEARCH]
   ```
 - rbs mode: assess the robustness of inference and construct a ML tree. This
-  mode runs the rapid bootstrapping full analysis<sup>[3](#footnote3)</sup>. The bootstrap convergence
-  criterion or the number of bootstrap searches can be specified with the
-  parameter `--raxml_nboot`. The following parameters will be used:
+  mode runs the rapid bootstrapping full analysis<sup>[3](#footnote3)</sup>. The
+  bootstrap convergence criterion or the number of bootstrap searches can be
+  specified with the parameter `--raxml_nboot`. The following parameters will be
+  used:
 
   ```bash
   -f a -m ASC_GTRCAT -V --asc-corr=lewis -N [RAXML_NBOOT]
