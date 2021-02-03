@@ -88,6 +88,10 @@ Please refer to [System
 requirements](https://metashot.github.io/#system-requirements) for the complete
 list of system requirements options.
 
+### Disk
+For each GB of input data the workflow requires approximately 1 GB for the final
+output and 1 GB for the working directory.
+
 ---
 
 <a name="footnote1">1</a>: Tamuri A., GoldmanAvoiding N. *Ascertainment bias in
