@@ -24,6 +24,7 @@ process snippy {
     param_targets = params.targets != 'none' ? "--targets $targets" : ''
     param_report = params.report ? '--report' : ''
     """
+    mkdir tmp
     snippy \
         --cpus ${task.cpus} \
         --outdir ${id} \
@@ -31,7 +32,9 @@ process snippy {
         $param_input \
         $param_targets \
         $param_report \
-        --force
+        --force \
+        --tempdir tmp
+    rm -rf tmp
     """
 }
 
