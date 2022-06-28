@@ -30,7 +30,8 @@ process snippy {
         --ref ${ref} \
         $param_input \
         $param_targets \
-        $param_report
+        $param_report \
+        --force
     """
 }
 
