@@ -33,7 +33,7 @@ process snippy {
         $param_targets \
         $param_report \
         --force \
-        --tempdir tmp
+        --tmpdir tmp
     rm -rf tmp
     """
 }
