@@ -1,8 +1,6 @@
 nextflow.enable.dsl=2
 
 
-// Params:
-//     - none
 process deinterleave {      
         tag "${id}"
 

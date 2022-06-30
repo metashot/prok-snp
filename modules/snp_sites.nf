@@ -1,8 +1,6 @@
 nextflow.enable.dsl=2
 
 
-// Params:
-//   - outdir
 process snp_sites {
     publishDir "${params.outdir}/gubbins/" , mode: 'copy'
 

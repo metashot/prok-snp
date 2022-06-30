@@ -1,11 +1,6 @@
 nextflow.enable.dsl=2
 
 
-// Params:
-//   - outdir
-//   - single_end
-//   - targets
-//   - report
 process snippy {
     tag "${id}"
 
@@ -32,6 +27,9 @@ process snippy {
         $param_input \
         $param_targets \
         $param_report \
+        --mincov ${params.mincov} \
+        --minfrac ${params.minfrac} \
+        --minqual ${params.minqual} \
         --force \
         --tmpdir tmp
     rm -rf tmp
@@ -39,8 +37,6 @@ process snippy {
 }
 
 
-// Params:
-//   - outdir
 process snippy_core {
     publishDir "${params.outdir}/snippy_core" , mode: 'copy'
     publishDir "${params.outdir}" , mode: 'copy' ,

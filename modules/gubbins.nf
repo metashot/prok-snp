@@ -1,10 +1,6 @@
 nextflow.enable.dsl=2
 
 
-// Params:
-//   - outdir
-//   - gubbins_tree_builder
-//   - gubbins_iterations
 process gubbins {
     publishDir "${params.outdir}/gubbins/" , mode: 'copy'
 
@@ -26,11 +22,7 @@ process gubbins {
     """
 }
 
-// Params:
-//   - outdir
-//   - raxml_mode
-//   - raxml_nsearch
-//   - raxml_nboot
+
 process raxml {
     publishDir "${params.outdir}/raxml" , mode: 'copy'
     publishDir "${params.outdir}" , mode: 'copy' ,
